@@ -16,10 +16,11 @@ class SignupController extends Controller
     $validate_rule = [
         'name' => 'required',
         'mail' => 'email',
-        'password' => 'numeric|between:0,9999999',
-        'confirmpassword' => 'numeric|between:0,9999999',
+        'password' => 'numeric',
+        'confirmpassword' => 'numeric',
     ];
     $this->validate($request, $validate_rule);
-    return view('signup.index', ['msg'=>'正しく入力されました！']);
+
+    return view('pages.home', ['name'=> $request->name]);
   }
 }
