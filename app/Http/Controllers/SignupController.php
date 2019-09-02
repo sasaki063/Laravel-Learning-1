@@ -16,7 +16,8 @@ class SignupController extends Controller
     $validate_rule = [
         'name' => 'required',
         'mail' => 'email',
-        'age' => 'numeric|between:0,150',
+        'password' => 'numeric|between:0,9999999',
+        'confirmpassword' => 'numeric|between:0,9999999',
     ];
     $this->validate($request, $validate_rule);
     return view('signup.index', ['msg'=>'正しく入力されました！']);
