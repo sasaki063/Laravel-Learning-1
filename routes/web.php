@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'PagesController@home')->name('home');
+Route::get('/signup', 'SignupController@index')->name('signup');
