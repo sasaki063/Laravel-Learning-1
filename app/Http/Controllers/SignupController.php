@@ -16,8 +16,8 @@ class SignupController extends Controller
     $validate_rule = [
         'name' => 'required',
         'mail' => 'email',
-        'password' => 'numeric',
-        'confirmpassword' => 'numeric',
+        'password' => 'required|min:8',
+        'password_confirm' => 'required|same:password',
     ];
     $this->validate($request, $validate_rule);
 

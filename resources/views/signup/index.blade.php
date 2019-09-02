@@ -23,11 +23,11 @@
     @if ($errors->has('password'))
     <tr><th>ERROR</th><td>{{$errors->first('password')}}</td></tr>
     @endif
-      <tr><th>Password: </th><td><input type="password" name="password" value="{{old('password')}}"></td></tr>
-    @if ($errors->has('confirmpassword'))
-      <tr><th>ERROR</th><td>{{$errors->first('confirmpassword')}}</td></tr>
+      <tr><th>Password: </th><td><input type="password" name="password"></td></tr>
+    @if ($errors->has('password_confirm'))
+      <tr><th>ERROR</th><td>{{$errors->first('password_confirm')}}</td></tr>
     @endif
-      <tr><th>ConfirmPassword:</th><td><input type="password" name="confirmpassword"></td></tr>
+      <tr><th>ConfirmPassword:</th><td><input type="password" name="password_confirm"></td></tr>
     <tr><th></th><td><input type="submit" value="send"></td></tr>
 </form>
 </table>
