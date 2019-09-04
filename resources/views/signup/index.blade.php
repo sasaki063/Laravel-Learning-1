@@ -3,31 +3,62 @@
   <a href="/signup">Signup</a>
 </header>
 
-<p>フォームを入力：</p>
 @if (count($errors) > 0)
 <p>入力に問題があります。</p>
 @endif
 
-<table>
 <form action="/signup" method="post">
+  <table>
     {{ csrf_field() }}
-
-    @if ($errors->has('name'))
-    <tr><th>ERROR</th><td>{{$errors->first('name')}}</td></tr>
-    @endif
-      <tr><th>name: </th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
-    @if ($errors->has('mail'))
-    <tr><th>ERROR</th><td>{{$errors->first('mail')}}</td></tr>
-    @endif
-      <tr><th>mail: </th><td><input type="text" name="mail" value="{{old('mail')}}"></td></tr>
-    @if ($errors->has('password'))
-    <tr><th>ERROR</th><td>{{$errors->first('password')}}</td></tr>
-    @endif
-      <tr><th>Password: </th><td><input type="password" name="password"></td></tr>
-    @if ($errors->has('password_confirm'))
-      <tr><th>ERROR</th><td>{{$errors->first('password_confirm')}}</td></tr>
-    @endif
-      <tr><th>ConfirmPassword:</th><td><input type="password" name="password_confirm"></td></tr>
-    <tr><th></th><td><input type="submit" value="send"></td></tr>
+    <thead>
+      <tr>
+        <th>フォームを入力</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        @if ($errors->has('name'))
+          <tr>
+            <td>ERROR</td>
+            <td>{{$errors->first('name')}}</td>
+          </tr>
+        @endif
+        <td>name: </td>
+        <td><input type="text" name="name" value="{{old('name')}}"></td>
+      </tr>
+      <tr>
+        @if ($errors->has('mail'))
+        <tr>
+          <td>ERROR</td>
+          <td>{{$errors->first('mail')}}</td>
+        </tr>
+        @endif
+        <td>mail: </td>
+        <td><input type="text" name="mail" value="{{old('mail')}}"></td>
+      </tr>
+      <tr>
+        @if ($errors->has('password'))
+        <tr>
+          <td>ERROR</td>
+          <td>{{$errors->first('password')}}</td>
+        </tr>
+        @endif
+        <td>Password: </td>
+        <td><input type="password" name="password"></td>
+      </tr>
+      <tr>
+        @if ($errors->has('password_confirm'))
+        <tr>
+          <td>ERROR</td>
+          <td>{{$errors->first('password_confirm')}}</td>
+        </tr>
+        @endif
+        <td>ConfirmPassword:</td>
+        <td><input type="password" name="password_confirm"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="send"></td>
+      </tr>
+    </tbody>
+  </table>
 </form>
-</table>
