@@ -13,4 +13,4 @@
 
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/signup', 'SignupController@index')->name('signup');
-Route::post('/signup', 'SignupController@post');
+Route::post('/signup', 'SignupController@post')->name('signin');

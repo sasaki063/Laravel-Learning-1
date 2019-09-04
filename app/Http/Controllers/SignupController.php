@@ -9,7 +9,7 @@ class SignupController extends Controller
 {
   public function index(SignupRequest $request)
   {
-    return view('signup.index', ['msg'=>'フォームを入力：']);
+    return view('signup.index');
   }
 
   public function post(SignupRequest $request)

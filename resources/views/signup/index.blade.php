@@ -3,7 +3,7 @@
   <a href="/signup">Signup</a>
 </header>
 
-<p>{{$msg}}</p>
+<p>フォームを入力：</p>
 @if (count($errors) > 0)
 <p>入力に問題があります。</p>
 @endif
