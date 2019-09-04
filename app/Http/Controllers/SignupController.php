@@ -7,7 +7,7 @@ use App\Http\Requests\SignupRequest;
 
 class SignupController extends Controller
 {
-  public function index(SignupRequest $request)
+  public function index()
   {
     return view('signup.index');
   }
