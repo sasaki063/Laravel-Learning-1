@@ -14,7 +14,7 @@ class SignupRequest extends FormRequest
     public function authorize()
     {
 
-      if ($this->path() ==  'signup')
+      if ($this->path() === 'signup')
       {
         return true;
       } else {
